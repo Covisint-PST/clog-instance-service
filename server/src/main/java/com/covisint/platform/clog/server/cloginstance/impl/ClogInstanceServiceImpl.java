@@ -19,7 +19,6 @@ public final class ClogInstanceServiceImpl extends BaseResourceService<ClogInsta
 	 */
 	public ClogInstanceServiceImpl(@Nonnull final ClogInstanceDAO dao) {
 		super(dao);
-		System.out.println("\n\n\n CLOG INSTANCE INSTANTIATED....\n\n\n\n");
 	}
 	
 	/** {@inheritDoc} */
