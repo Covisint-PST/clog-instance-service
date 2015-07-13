@@ -8,6 +8,7 @@
         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
     <!-- Define application DAOs here -->
+    <bean id="clogInstanceDao" class="com.covisint.platform.clog.server.cloginstance.impl.ClogInstanceJpaDao" />
 
     <!-- Datasource -->
     <bean id="datasource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
@@ -37,6 +38,32 @@
         <!-- Debugging options -->
         <property name="unreturnedConnectionTimeout" value="${db.con.unreturnedTimeout:0}" />
         <property name="debugUnreturnedConnectionStackTraces" value="${db.con.debugUnreturned:false}" />
+    </bean>
+    
+    
+    <bean id="emf" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="dataSource" ref="datasource" />
+        <property name="packagesToScan" value="com.covisint" />
+        <property name="persistenceProviderClass" value="org.hibernate.jpa.HibernatePersistenceProvider" />
+        <property name="jpaDialect">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaDialect" />
+        </property>
+        <property name="jpaProperties">
+            <props>
+                <prop key="hibernate.dialect">${db_hib_dialect:org.hibernate.dialect.Oracle10gDialect}</prop>
+                <prop key="hibernate.default_schema">${db_hib_schema:svc_clog_instance}</prop>
+                <prop key="hibernate.id.new_generator_mappings">true</prop>
+                <prop key="hibernate.jdbc.batch_versioned_data">true</prop>
+                <prop key="hibernate.connection.isolation">${db_hib_isolation_level:4}</prop>
+                <prop key="hibernate.jdbc.fetch_size">${db_hib_fetch_size:50}</prop>
+                <prop key="hibernate.max_fetch_depth">${db_hib_max_fetch_depth:3}</prop>
+                <prop key="hibernate.default_batch_fetch_size">${db_hib_default_batch_size:8}</prop>
+                <prop key="hibernate.hbm2ddl.auto">${db_hib_ddl:validate}</prop>
+                <prop key="hibernate.generate_statistics">${db_hib_generate_stats:true}</prop>
+                <prop key="hibernate.format_sql">${db_hib_format_sql:false}</prop>
+                <prop key="hibernate.ejb.interceptor">com.covisint.core.support.hibernate.AuditInterceptor</prop>
+            </props>
+        </property>
     </bean>
 
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">

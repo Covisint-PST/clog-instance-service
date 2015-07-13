@@ -6,5 +6,7 @@
         http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd ">
 
     <!-- Define application service beans here -->
+    
+    <bean id="clogInstanceService" class="com.covisint.platform.clog.server.cloginstance.impl.ClogInstanceServiceImpl" c:dao-ref="clogInstanceDao" />
 
 </beans>

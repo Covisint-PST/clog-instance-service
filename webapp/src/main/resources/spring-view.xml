@@ -11,13 +11,13 @@
     <util:list id="entityReaders">
         <!-- Error reader must be declared first -->
         <bean class="com.covisint.core.http.service.core.io.jsonp.HttpServiceErrorReader" />
-        <!-- Declare entity readers here -->
+        <bean class="com.covisint.platform.clog.core.cloginstance.io.json.ClogInstanceReader"/>
     </util:list>
 
     <util:list id="entityWriters">
         <!-- Error writer must be declared first! -->
         <bean class="com.covisint.core.http.service.core.io.jsonp.HttpServiceErrorWriter" /> 
-        <!-- Declare entity writers here -->
+        <bean class="com.covisint.platform.clog.core.cloginstance.io.json.ClogInstanceWriter"/>
     </util:list>
 
     <bean id="messageConverter" class="com.covisint.core.http.service.server.view.MediaTypeModelMessageConverter"
@@ -31,7 +31,11 @@
             <ref bean="messageConverter" />
         </mvc:message-converters>
     </mvc:annotation-driven>
-
-    <context:component-scan base-package="com.covisint.core,com.covisint.platform.clog.cloginstance" />
+    
+    <context:component-scan base-package="com.covisint.core,com.covisint.platform.clog" />
+    
+    <mvc:interceptors>
+        <bean class="com.covisint.core.http.service.server.HeadersInterceptor" />
+    </mvc:interceptors>
 
 </beans>

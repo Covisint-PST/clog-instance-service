@@ -17,10 +17,8 @@
         </property>
     </bean>
     
-    <beans profile="prod">
-        <!-- Can't use context:property-placeholder until Spring bug SPR-7765 is addressed -->
-        <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer" 
-              p:location="file:#{systemProperties['app.conf']}" />
+    <beans profile="!dev">
+        <context:property-placeholder />
     </beans>
     
     <beans profile="dev">

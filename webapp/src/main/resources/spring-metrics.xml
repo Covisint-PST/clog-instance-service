@@ -14,6 +14,7 @@
     <metrics:annotation-driven metric-registry="metrics" />
 
     <!-- Report out to slf4j and jmx. -->
+    <metrics:reporter type="slf4j" metric-registry="metrics" period="${metrics.reporting.logInterval:15m}" />
     <metrics:reporter type="jmx" metric-registry="metrics" />
 
 </beans>

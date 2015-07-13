@@ -2,4 +2,4 @@
 
 /** Implementation of the cloginstance server module. */
 
-package com.covisint.platform.clog.server;
+package com.covisint.platform.clog.server.cloginstance;

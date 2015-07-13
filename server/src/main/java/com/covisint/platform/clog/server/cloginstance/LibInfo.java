@@ -1,6 +1,6 @@
 /* Copyright (C) 2014 Covisint. All Rights Reserved. */
 
-package com.covisint.platform.clog.server;
+package com.covisint.platform.clog.server.cloginstance;
 
 import java.io.IOException;
 import java.net.URL;
