@@ -2,7 +2,7 @@
 
 package com.covisint.platform.clog.core.cloginstance;
 
-import static com.covisint.platform.clog.core.ClogInstancePersistenceConstants.*;
+import static com.covisint.platform.clog.core.ClogInstancePersistenceConstants.CLOG_INSTANCE_TABLE_NAME;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,9 +11,9 @@ import javax.persistence.Enumerated;
 import javax.persistence.Table;
 
 import com.covisint.core.http.service.core.AbstractRealmScopedResource;
-import com.covisint.core.http.service.core.AbstractResource;
 import com.covisint.core.support.constraint.Searchable;
 import com.covisint.core.support.hibernate.Audited;
+import com.covisint.platform.clog.core.ClogInstancePersistenceConstants.Columns;
 import com.covisint.platform.clog.core.ClogInstanceStatusE;
 import com.google.common.base.Objects;
 

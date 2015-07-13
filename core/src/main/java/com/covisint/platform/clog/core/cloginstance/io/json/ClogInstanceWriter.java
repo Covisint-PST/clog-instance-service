@@ -2,12 +2,14 @@
 package com.covisint.platform.clog.core.cloginstance.io.json;
 
 import static com.covisint.platform.clog.core.SupportedMediaTypesE.CLOG_INSTANCE_V1_MEDIA_TYPE;
-import static com.covisint.platform.clog.core.cloginstance.io.json.ClogInstanceJsonConstants.*;
+import static com.covisint.platform.clog.core.cloginstance.io.json.ClogInstanceJsonConstants.JSON_CLOG_INSTANCE_NAME;
+import static com.covisint.platform.clog.core.cloginstance.io.json.ClogInstanceJsonConstants.JSON_PLATFORM_GROUP_ID;
+import static com.covisint.platform.clog.core.cloginstance.io.json.ClogInstanceJsonConstants.JSON_PLATFORM_INSTANCE_ID;
+import static com.covisint.platform.clog.core.cloginstance.io.json.ClogInstanceJsonConstants.JSON_PLATFORM_SOLUTION_ID;
 
 import javax.json.JsonObjectBuilder;
 
 import com.covisint.core.http.service.core.io.jsonp.AbstractRealmScopedResourceWriter;
-import com.covisint.core.http.service.core.io.jsonp.AbstractResourceWriter;
 import com.covisint.core.support.constraint.Nonnull;
 import com.covisint.core.support.constraint.Nullable;
 import com.covisint.platform.clog.core.cloginstance.ClogInstance;

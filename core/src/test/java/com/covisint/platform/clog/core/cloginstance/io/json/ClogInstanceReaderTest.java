@@ -1,7 +1,7 @@
 package com.covisint.platform.clog.core.cloginstance.io.json;
 
 import static com.covisint.platform.clog.core.SupportedMediaTypesE.CLOG_INSTANCE_V1_MEDIA_TYPE;
-import static com.covisint.platform.clog.core.cloginstance.ClogInstanceTestUtil.*;
+import static com.covisint.platform.clog.core.cloginstance.ClogInstanceTestUtil.mockMediaType;
 import static org.junit.Assert.assertEquals;
 
 import javax.json.Json;
@@ -16,7 +16,6 @@ import org.powermock.modules.junit4.PowerMockRunner;
 import com.covisint.core.http.service.core.io.jsonp.JsonpSupport;
 import com.covisint.platform.clog.core.ClogInstanceStatusE;
 import com.covisint.platform.clog.core.cloginstance.ClogInstance;
-import com.covisint.platform.clog.core.cloginstance.ClogInstanceTest;
 import com.google.common.net.MediaType;
 
 /**

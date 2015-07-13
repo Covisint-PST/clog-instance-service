@@ -2,13 +2,11 @@
 package com.covisint.platform.clog.server.cloginstance.impl;
 
 import static org.hamcrest.CoreMatchers.equalTo;
-import static org.junit.Assert.*;
+import static org.mockito.Mockito.mock;
 
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-
-import static org.mockito.Mockito.*;
 
 import com.covisint.platform.clog.core.cloginstance.ClogInstance;
 import com.covisint.platform.clog.server.cloginstance.ClogInstanceDAO;
