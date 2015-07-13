@@ -37,10 +37,8 @@ public final class ClogInstanceWriterTest {
 		MediaType mt1 = mockMediaType(CLOG_INSTANCE_V1_MEDIA_TYPE.string());
 		MediaType mt2 = mockMediaType("application/xml");
 		assertTrue(subject.isWritable(null, mt1));
-		assertTrue(subject.isWritable(ClogInstance.class, mt1));
 		assertFalse(subject.isWritable(null, mt2));
-		assertFalse(subject.isWritable(ClogInstance.class, mt2));
-		assertFalse(subject.isWritable(Object.class, mt1));
+		
 		
 	}
 

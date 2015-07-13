@@ -9,7 +9,7 @@ package com.covisint.platform.clog.core;
 public enum SupportedMediaTypesE {
 
 	/** Media Type for CLOG Instance V1 Resource */
-	CLOG_INSTANCE_V1_MEDIA_TYPE("application/com.covisint.platform.clog.core.cloginstance.v1+json");
+	CLOG_INSTANCE_V1_MEDIA_TYPE("application/vnd.com.covisint.platform.clog.core.cloginstance.v1+json");
 	
 	/** ENUM constructor */
 	private SupportedMediaTypesE(String stringValue){
